@@ -17,3 +17,6 @@ jobs:
 
     - name: Build
       run: sleep 20
+      
+    - name: Print
+      run: print 11111
