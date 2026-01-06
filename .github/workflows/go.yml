@@ -1,22 +1,18 @@
-# This workflow will build a golang project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
-
 name: Go
 
 on:
   push:
-    branches: ["main"]
   pull_request:
-    branches: ["main"]
+  workflow_dispatch:
+  create:
+  delete:
 
 jobs:
-  build:
-    runs-on: tenki-local-ubuntu-22.04-small-2c-4g
+  build-1:
+    runs-on: tenki-staging-standard-autoscale
     steps:
-    - uses: actions/checkout@v4
-
-    - name: Build
-      run: sleep 20
-      
-    - name: Print
-      run: print 1111111
+      - uses: actions/checkout@v4
+      - name: Sleep and Print
+        run: |
+          sleep 20
+          echo 11111
