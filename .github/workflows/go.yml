@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-1:
-    runs-on: tenki-lo
+    runs-on: ubuntu-latest
     steps:
       - name: Sleep and Print
         run: 
