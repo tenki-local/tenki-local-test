@@ -1,7 +1,0 @@
-name: M6-nontenki
-on: [workflow_dispatch]
-jobs:
-  hosted:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo non-tenki && sleep 60
