@@ -9,10 +9,10 @@ on:
 
 jobs:
   build-1:
-    runs-on: tenki-local-ubuntu-22.04-small-2c-4g
+    runs-on: ubuntu-latest
     steps:
       - name: Sleep and Print
-        run: |
+        run: 
           sleep 20
           echo 11111111
 
