@@ -10,6 +10,7 @@ jobs:
     steps:
       - name: Sleep and Print
         run: |
+          echo "full e2e: webhook -> engine -> scheduler -> sandbox -> macOS VM"
           uname -a
           sw_vers
           id
