@@ -8,11 +8,24 @@ jobs:
   build-1:
     runs-on: tenki-local-macos-26-mini
     steps:
+      - name: Platform
+        run: |
+          uname -a
+          sw_vers -productVersion
+          id
+      # The image keeps its toolchain env in ~/.bashrc, which only a bash login
+      # shell reads. Empty here means the job lost the whole toolchain.
+      - name: Toolchain environment
+        run: |
+          echo "ImageOS=${ImageOS:-MISSING}"
+          echo "ImageVersion=${ImageVersion:-MISSING}"
+          echo "RUNNER_TOOL_CACHE=${RUNNER_TOOL_CACHE:-MISSING}"
+          echo "ANDROID_HOME=${ANDROID_HOME:-MISSING}"
+          echo "PATH=$PATH"
+      - name: Limits
+        run: |
+          echo "nofile=$(ulimit -n) nproc=$(ulimit -u)"
       - name: Sleep and Print
         run: |
-          echo "full e2e: webhook -> engine -> scheduler -> sandbox -> macOS VM"
-          uname -a
-          sw_vers
-          id
           sleep 20
           echo 11111111
