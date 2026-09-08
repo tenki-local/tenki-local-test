@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-1:
-    runs-on: tenki-local-macos-26-small
+    runs-on: tenki-local-macos-26-mini
     steps:
       - name: Sleep and Print
         run: |
